@@ -1,0 +1,738 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Covariant Physics by Moataz Emam}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\newcommand{\ei}[1]{\hat{\bm{e}}_#1}
+\newcommand{\Lagr}{\mathcal{L}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{\textbf{Solution}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{proof}{\textbf{Exercise 1.1}}
+\begin{itemize}
+\item [2.] For the oblate spheroidal coordinates system if we fix $\mu$ to
+different values we get a set of concentric spheres as we show below
+% \begin{center}
+%     \includegraphics[scale=0.3]{ch1_1.1-i.png}
+% \end{center}
+If we fix $\nu$ we get the following surfaces
+% \begin{center}
+%     \includegraphics[scale=0.3]{ch1_1.1-ii.png}
+% \end{center}
+Finally if we fix $\phi$ to different values we get that
+% \begin{center}
+%     \includegraphics[scale=0.3]{ch1_1.1-iii.png}
+% \end{center}
+Now, joining all together we get that
+% \begin{center}
+%     \includegraphics[scale=0.3]{ch1_1.1-iv.png}
+% \end{center}
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.2}}\\
+Let us consider a point in the $x', y', z'$ coordinate system as shown below
+% \begin{center}
+%     \includegraphics[scale=0.35]{ch1_1.2.png}
+% \end{center}
+Then we see that
+\begin{align*}
+    x &= x'\\
+    y &= y' + z'\sin\alpha\\
+    z &= z'\cos\alpha
+\end{align*}
+Or
+\begin{align*}
+    x' &= x\\
+    y' &= y - z \tan\alpha\\
+    z' &= \frac{z}{\cos\alpha}
+\end{align*}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.3}}\\
+\begin{itemize}
+\item [1.] We know that in spherical coordinates
+\begin{align*}
+    x^1 &= r\sin\theta\cos\phi\\
+    x^2 &= r\sin\theta\sin\phi\\
+    x^3 &= r\cos\theta
+\end{align*}
+Then
+\begin{align*}
+    dx^1 &= d(r\sin\theta\cos\phi)\\
+    &= dr\sin\theta\cos\phi + rd(\sin\theta)\cos\phi + r\sin\theta d(\cos\phi)\\
+    &= dr\sin\theta\cos\phi + rd\theta\cos\theta\cos\phi - rd\phi\sin\theta \sin\phi
+    \\\\
+    dx^2 &= d(r\sin\theta\sin\phi)\\
+    &= dr\sin\theta\sin\phi + rd(\sin\theta)\sin\phi + r\sin\theta d(\sin\phi)\\
+    &= dr\sin\theta\sin\phi + rd\theta\cos\theta\sin\phi + rd\phi\sin\theta \cos\phi
+    \\\\
+    dx^3 &= d(r\cos\theta)\\
+    &= dr\cos\theta + rd(\cos\theta)\\
+    &= dr\cos\theta - rd\theta\sin\theta
+\end{align*}
+Let us compute each component $(dx^i)^2$ separately
+\begin{align*}
+    (dx^1)^2 &= (dr\sin\theta\cos\phi + rd\theta\cos\theta\cos\phi - rd\phi\sin\theta \sin\phi)^2\\
+    &= dr^2\sin^2\theta\cos^2\phi + r^2d\theta^2\cos^2\theta\cos^2\phi
+    + r^2d\phi^2\sin^2\theta \sin^2\phi\\
+    &\quad+ 2rdr d\theta\sin\theta\cos\theta\cos^2\phi
+    - 2rdrd\phi\sin^2\theta\cos\phi\sin\phi\\
+    &\quad- 2r^2d\theta d\phi\cos\theta\cos\phi \sin\theta \sin\phi
+    \\\\
+    (dx^2)^2 &= (dr\sin\theta\sin\phi + rd\theta\cos\theta\sin\phi + rd\phi\sin\theta \cos\phi)^2\\
+    &= dr^2\sin^2\theta\sin^2\phi + r^2d\theta^2\cos^2\theta\sin^2\phi + r^2d\phi^2\sin^2\theta\cos^2\phi\\
+    &\quad+ 2rdrd\theta\sin\theta\cos\theta\sin^2\phi
+    + r^2d\theta d\phi\cos\theta\sin\phi\sin\theta \cos\phi\\
+    &\quad+ rdrd\phi\sin^2\theta\sin\phi\cos\phi
+    \\\\
+    (dx^3)^2 &= (dr\cos\theta - rd\theta\sin\theta)^2\\
+    &= dr^2\cos^2\theta + r^2d\theta^2\sin^2\theta
+    - 2rdrd\theta\cos\theta\sin\theta
+\end{align*}
+Now we sum all components
+\begin{align*}
+    dl^2 &= (dx^1)^2 + (dx^2)^2 + (dx^3)^2
+    = dr^2 + r^2d\theta^2 + r^2\sin^2\theta d\phi^2
+\end{align*}
+Where we see that all terms with two different differentials cancel out.
+
+\item[2.] We know that the spherical coordinates relate to the cylindrical
+coordinates as follows
+\begin{align*}
+    \rho &= r\sin\theta\\
+    z &= r\cos\theta\\
+    \phi &= \phi
+\end{align*}
+Then
+\begin{align*}
+    d\rho &= dr\sin\theta + rd\theta \cos\theta\\
+    dz &= dr\cos\theta - rd\theta \sin\theta\\
+    d\phi &= d\phi
+\end{align*}
+Also, we know that the line element in cylindrical coordinates is given by
+\begin{align*}
+    dl^2 = d\rho^2 + \rho^2d\phi^2 + dz^2
+\end{align*}
+Hence replacing we get that
+\begin{align*}
+    dl^2 &= (dr\sin\theta + rd\theta \cos\theta)^2
+    + r^2\sin^2\theta d\phi^2 + (dr\cos\theta - rd\theta \sin\theta)^2\\
+    &= dr^2\sin^2\theta + r^2d\theta^2 \cos^2\theta
+    + 2rdrd\theta\sin\theta\cos\theta\\
+    &\quad+ r^2\sin^2\theta d\phi^2 + dr^2\cos^2\theta + r^2d\theta^2 \sin^2\theta
+    -2rdrd\theta\cos\theta\sin\theta\\
+    &= dr^2 + r^2d\theta^2 + r^2\sin^2\theta d\phi^2
+\end{align*}
+
+\item[5.] We know that in the skew coordinate system we have
+\begin{align*}
+    x &= x'\\
+    y &= y' +  z'\sin\alpha\\
+    z &= z'\cos\alpha
+\end{align*}
+Then
+\begin{align*}
+    dx &= dx'\\
+    dy &= dy' +  dz'\sin\alpha\\
+    dz &= dz'\cos\alpha
+\end{align*}
+Hence the line element in the skew coordinate system is
+\begin{align*}
+    dl^2 &= dx^2 + dy^2 + dz^2\\
+    &= dx'^2 + (dy' + dz'\sin\alpha)^2 + \cos^2\alpha dz'^2\\
+    &= dx'^2 + dy'^2 + \sin^2\alpha dz'^2 + 2dy'dz'\sin\alpha + \cos^2\alpha dz'^2\\
+    &= dx'^2 + dy'^2 + dz'^2 + 2dy'dz'\sin\alpha
+\end{align*}
+We see that the metric is not diagonal as expected.
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.4}}\\
+\begin{itemize}
+\item [3.] The Oblate spheroidal coordinates are defined by
+\begin{align*}
+    x &= a\cosh\mu\cos\nu\cos\varphi\\
+    y &= a\cosh\mu\cos\nu\sin\varphi\\
+    z &= a\sinh\mu\sin\nu
+\end{align*}
+Then the scale factors are
+\begin{align*}
+    h_\mu^2
+    &= a^2\sinh^2\mu\cos^2\nu\cos^2\varphi + a^2\sinh^2\mu\cos^2\nu\sin^2\varphi
+    + a^2\cosh^2\mu\sin^2\nu\\
+    &= a^2\sinh^2\mu\cos^2\nu(\cos^2\varphi + \sin^2\varphi)
+    + a^2\cosh^2\mu\sin^2\nu\\
+    &= a^2\sinh^2\mu\cos^2\nu + a^2\cosh^2\mu\sin^2\nu\\
+    &= a^2(\sinh^2\mu\cos^2\nu + (\sinh^2\mu + 1)\sin^2\nu)\\
+    &= a^2(\sinh^2\mu + \sin^2\nu)
+    \\\\
+    h_\nu^2
+    &= a^2\cosh^2\mu\sin^2\nu\cos^2\varphi + a^2\cosh^2\mu\sin^2\nu\sin^2\varphi
+    + a^2\sinh^2\mu\cos^2\nu\\
+    &= a^2\cosh^2\mu\sin^2\nu + a^2\sinh^2\mu\cos^2\nu\\
+    &= a^2(\sinh^2\mu + \sin^2\nu)
+    \\\\
+    h_\varphi^2
+    &= a^2\cosh^2\mu\cos^2\nu\sin^2\varphi + a^2\cosh^2\mu\cos^2\nu\cos^2\varphi + 0\\
+    &= a^2\cosh^2\mu\cos^2\nu
+\end{align*}
+Hence the line element is given by
+\begin{align*}
+    dl^2 &= a^2(\sinh^2\mu + \sin^2\nu)d\mu^2
+    + a^2(\sinh^2\mu + \sin^2\nu)d\nu^2
+    + a^2\cosh^2\mu\cos^2\nu d\varphi^2\\
+    &= a^2(\sinh^2\mu + \sin^2\nu)(d\mu^2 + d\nu^2)
+    + a^2\cosh^2\mu\cos^2\nu d\varphi^2\\
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.6}}\\
+Equation (1.57) states that
+\begin{align*}
+    dl^2 = \delta_{ij}dx^i dx^j
+\end{align*}
+If we expand it we get that
+\begin{align*}
+    dl^2 &= \delta_{11}dx^1 dx^1 + \delta_{12}dx^1 dx^2 + \delta_{13}dx^1 dx^3
+    + \delta_{21}dx^2 dx^1 + \delta_{22}dx^2 dx^2\\
+    &\quad+ \delta_{23}dx^2 dx^3
+    + \delta_{31}dx^3 dx^1 + \delta_{32}dx^3 dx^2 + \delta_{33}dx^3 dx^3\\
+    &= \delta_{11}(dx^1)^2 + \delta_{12}dx^1 dx^2 + \delta_{13}dx^1 dx^3
+    + \delta_{21}dx^2 dx^1 + \delta_{22}(dx^2)^2\\
+    &\quad+ \delta_{23}dx^2 dx^3
+    + \delta_{31}dx^3 dx^1 + \delta_{32}dx^3 dx^2 + \delta_{33}(dx^3)^2
+\end{align*}
+but we know that $\delta_{ij} = 1$ if $i = j$ and $\delta_{ij} = 0$ if
+$i \neq j$ then
+\begin{align*}
+    dl^2 &= (dx^1)^2 + (dx^2)^2 + (dx^3)^2
+\end{align*}
+Which is equation (1.15).
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.7}}\\
+\begin{itemize}
+\item [1.]
+\begin{align*}
+    (\bm{A}\cdot\bm{B})(\bm{C}\cdot\bm{D})
+    &= (A^iB^j \delta_{ij})(C^kD^l \delta_{kl})
+    = (A^iB_i)(C^kD_k)
+\end{align*}
+\item [2.]
+\begin{align*}
+    (\bm{A} - \bm{B})\cdot\hat{\bm{n}} &= 0 \\
+    (A^i - B^i)n^j\delta_{ij} &= 0\\
+    (A^i - B^i)n_i &= 0
+\end{align*}
+The condition for $\hat{\bm{n}}$ to have unit magnitude is
+$n^in^j\delta_{ij} = 1$.
+\item [3.]
+\begin{align*}
+    \cos\theta &= \frac{\bm{A} \cdot \bm{B}}{AB}
+    = \frac{A^iB^j\delta_{ij}}{\sqrt{A^iA^j\delta_{ij}}\sqrt{B^kB^l\delta_{kl}}}
+\end{align*}
+\item [4.]
+\begin{align*}
+    \bm{E} = k\frac{\bm{r}}{r^3}
+    = k\frac{x^i\hat{\bm{e}}_i}{(\sqrt{x^ix^j\delta_{ij}})^3}
+    = k\frac{x^i\hat{\bm{e}}_i}{(x^ix^j\delta_{ij})^{3/2}}
+\end{align*}
+\item [5.]
+\begin{align*}
+    dW = \bm{F}\cdot d\bm{r} = F^i dx^j \delta_{ij}
+\end{align*}
+\item [6.]
+\begin{align*}
+    \frac{1}{2}mv^2 = \frac{1}{2}m(v^iv^j\delta_{ij})
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.8}}\\
+\begin{itemize}
+\item [1.]
+\begin{align*}
+    A^1_3B_1^2 + A^2_3B_2^2 + A^3_3B_3^2 = A^i_3B_i^2
+\end{align*}
+\item [2.]
+\begin{align*}
+    A^1_{11} + A^2_{12} + A^3_{13} = A^i_{1i}
+\end{align*}
+\item [3.] The three expressions
+\begin{align*}
+    A^{11}B_1 + A^{12}B_2 + A^{13}B_3 &= C^1\\
+    A^{21}B_1 + A^{22}B_2 + A^{23}B_3 &= C^2\\
+    A^{31}B_1 + A^{32}B_2 + A^{33}B_3 &= C^3
+\end{align*}
+can be reduced to 
+\begin{align*}
+    A^{ji}B_i &= C^j
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.9}}\\
+\begin{itemize}
+\item [1.] Assuming each vector has 3 components we get that
+\begin{align*}
+    A_i^jB_jC^i &= A_1^1B_1C^1 + A_2^1B_1C^2 + A_3^1B_1C^3\\
+    &\quad+ A_1^2B_2C^1 + A_2^2B_2C^2 + A_3^2B_2C^3\\
+    &\quad+ A_1^3B_3C^1 + A_2^3B_3C^2 + A_3^3B_3C^3
+\end{align*}
+\item [2.] Assuming each vector has 3 components we get that
+\begin{align*}
+    A_iB^j_kC^kD_j^i &= A_1B^1_1C^1D_1^1 + A_2B^1_1C^1D_1^2 + A_3B^1_1C^1D_1^3\\
+    &\quad+ A_1B^2_1C^1D_2^1 + A_2B^2_1C^1D_2^2 + A_3B^2_1C^1D_2^3\\
+    &\quad+ A_1B^3_1C^1D_3^1 + A_2B^3_1C^1D_3^2 + A_3B^3_1C^1D_3^3\\
+    %
+    &\quad+ A_1B^1_2C^2D_1^1 + A_2B^1_2C^2D_1^2 + A_3B^1_2C^2D_1^3\\
+    &\quad+ A_1B^2_2C^2D_2^1 + A_2B^2_2C^2D_2^2 + A_3B^2_2C^2D_2^3\\
+    &\quad+ A_1B^3_2C^2D_3^1 + A_2B^3_2C^2D_3^2 + A_3B^3_2C^2D_3^3\\
+    %
+    &\quad+ A_1B^1_3C^3D_1^1 + A_2B^1_3C^3D_1^2 + A_3B^1_3C^3D_1^3\\
+    &\quad+ A_1B^2_3C^3D_2^1 + A_2B^2_3C^3D_2^2 + A_3B^2_3C^3D_2^3\\
+    &\quad+ A_1B^3_3C^3D_3^1 + A_2B^3_3C^3D_3^2 + A_3B^3_3C^3D_3^3\\
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.10}}\\
+\begin{itemize}
+\item [1.] To fix $\bm{B}\cdot\bm{C} = B^iC_j$ we need to replace the index $j$
+by $i$ because of the definition we have in index notation for the dot product
+i.e. should be $\bm{B}\cdot\bm{C} = B^iC_i$.
+\item [2.] In the case of $A^{ij} = B^{ik}C_k^?$ since on the LHS we have two
+free indexes then on the RHS we should have the same then must be that
+$$A^{ij} = B^{ik}C_k^j$$
+\item [3.] The expression $N_i = R^k_iD_k^pC_?$ is fixed putting $p$ where the
+question mark is i.e.
+$$N_i = R^k_iD_k^pC_p$$
+Since the only free index in the LHS is $i$.
+\item [4.] The expression $L^i_kD^k = R^n_mN^?_nP^?$ is fixed as follows
+$$L^i_kD^k = R^n_mN^i_nP^m$$
+or as 
+$$L^i_kD^k = R^n_mN^m_nP^i$$
+Since the only free index in the LHS is $i$.
+\item [5.] The expression $\delta^{ij} A_jB_i^k = A^?B_i^k = C^?$ is fixed as
+follows
+$$\delta^{ij} A_jB_i^k = A^iB_i^k = C^k$$
+Since we are rasing the index in the first equality and we are leaving only $k$
+as a free index in the last equality.
+\item [6.] The expression $N_i = R^k_i\delta^p_kC_? = R_?^?C^?$ is fixed as
+follows
+\begin{align*}
+    N_i &= R^k_i\delta^p_kC_p = R_i^kC^k
+\end{align*}
+Since we are raising the index of $C_?$ in the last equality.
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.12}}\\
+\begin{itemize}
+\item[1.]\begin{align*}
+    \bm{A}\cdot (\vec{\nabla} f) = A^i \partial_i f
+\end{align*}
+
+\item[2.]\begin{align*}
+    \vec{\nabla} \cdot \vec{\nabla} f = \partial^i\partial_i f
+\end{align*}
+
+\item[3.]\begin{align*}
+    \bm{A}(\vec{\nabla} \cdot \bm{B}) = A^i\partial_j B^j \ei{i}
+\end{align*}
+
+\item[4.]\begin{align*}
+    \nabla^2 f - \frac{1}{v^2}\pdv[2]{f}{t} =
+    \partial_i\partial^i f - \frac{1}{v^2}\partial_t^2 f = 0
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.13}}\\
+\begin{itemize}
+\item[1.]
+Using the product rule we see that
+\begin{align*}
+    \partial_k(a_{ij}A^iA^j) &= a_{ij}\partial_k(A^iA^j)\\
+    &= a_{ij}(A^j(\partial_kA^i) + A^i(\partial_kA^j))\\
+    &= 2a_{ij}A^i(\partial_kA^j)
+\end{align*}
+In the third steps we changed the indices because the summation isn't altered
+by swapping the indices.
+\item[2.]
+We know that the notation $\partial_i x_j$ implies
+$\partial_i x_j = \partial x_j/\partial x_i$ so if $j = i$ then
+$\partial x_j/\partial x_i = 1$ and if $j \neq i$ we get that
+$\partial x_j/\partial x_i = 0$ so we can write that
+$\partial_i x_j = \delta_{ij}$.
+\\
+In the case of $\partial_i x^j$ we must note first that $x^j = \delta^{kj}x_k$
+then
+\begin{align*}
+    \partial_i x^j = \partial_i \delta^{kj}x_k
+    = \delta^{kj} \partial_i x_k
+    = \delta^{kj} \delta_{ik} = \delta_{i}^j
+\end{align*}
+Therefore if $i = j$ then $\partial_i x^j = 1$ and if $i \neq j$ we get that
+$\partial_i x^j = 0$.
+\item [3.] We see that
+\begin{align*}
+    \nabla \cdot \bm{r} = \partial_i x^i
+    = \pdv{x}{x} + \pdv{y}{y} + \pdv{z}{z} = 3
+\end{align*}
+\item [4.] Using that $|\bm{r}| = \sqrt{x_i x^i}$, the chain rule and the
+product rule we see that
+\begin{align*}
+    \nabla(\ln|\bm{r}|) &= \partial^j (\ln\sqrt{x_ix^i})\ei{j}\\
+    &= \frac{1}{2}\partial^j (\ln(x_ix^i))\ei{j}\\
+    &= \frac{1}{2} \bigg(\frac{\partial^j x_i x^i}{x_kx^k}\bigg)\ei{j}\\
+    &= \frac{1}{2} \bigg(\frac{x^i\partial^j x_i + x_i\partial^j x^i}{x_kx^k}\bigg)\ei{j}\\
+    &= \frac{1}{2} \bigg(\frac{x^i\delta_i^j + x_i\delta^{ji}}{x_kx^k}\bigg)\ei{j}\\
+    &= \frac{1}{2} \bigg(\frac{x^j + x^j}{x_kx^k}\bigg)\ei{j}\\
+    &= \frac{x^j\ei{j}}{x_kx^k}\\
+    &= \frac{\bm{r}}{r^2} 
+\end{align*}
+\item [5.] Let us note that $\nabla^2 = \nabla \cdot \nabla$, so reusing the
+result from part 4 we see that
+\begin{align*}
+    \nabla^2(\ln|\bm{r}|) &= \nabla \cdot \nabla(\ln|\bm{r}|)\\
+    &= \partial_j\frac{x^j}{x_kx^k}\\
+    &= x^j\partial_j\frac{1}{x_kx^k} + \frac{1}{x_kx^k}\partial_jx^j\\
+    &= -x^j\frac{\partial_j x_kx^k}{(x_kx^k)^2} + \frac{3}{x_kx^k}\\
+    &= -x^j\frac{x^k\partial_j x_k + x_k\partial_j x^k}{(x_kx^k)^2}
+    + \frac{3}{x_kx^k}\\
+    &= -x^j\frac{x^k\delta_{jk} + x_k\delta_j^k}{(x_kx^k)^2}
+    + \frac{3}{x_kx^k}\\
+    &= -\frac{2x_jx^j}{(x_kx^k)^2} + \frac{3}{x_kx^k}\\
+    &= -\frac{2r^2}{(r^2)^2} + \frac{3}{r^2}\\
+    &= -\frac{2}{r^2} + \frac{3}{r^2}\\
+    &= \frac{1}{r^2}
+\end{align*}
+Where we used that $\partial_jx^j = 3$ from part 3.
+\end{itemize}
+
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.14}}\\
+\begin{itemize}
+\item[1.] Equation 1.99 states that
+\begin{align*}
+    \bm{C} = \delta^{ni}\varepsilon_{ijk}A^jB^k\ei{n}
+\end{align*}
+Expanding the equation we get that
+\begin{align*}
+    \bm{C} &= 
+    \delta^{11}\varepsilon_{123}A^2B^3\ei{1}
+    + \delta^{11}\varepsilon_{132}A^3B^2\ei{1} +\\
+    &\quad+ \delta^{22}\varepsilon_{213}A^1B^3\ei{2}
+    + \delta^{22}\varepsilon_{231}A^3B^1\ei{2} + \\
+    &\quad+ \delta^{33}\varepsilon_{321}A^2B^1\ei{3}
+    + \delta^{33}\varepsilon_{312}A^1B^2\ei{3}\\
+    &= \varepsilon_{123}A^2B^3\ei{1}
+    - \varepsilon_{123}A^3B^2\ei{1}
+    - \varepsilon_{231}A^1B^3\ei{2}
+    + \varepsilon_{231}A^3B^1\ei{2}\\
+    &\quad- \varepsilon_{312}A^2B^1\ei{3}
+    + \varepsilon_{312}A^1B^2\ei{3}\\
+    &= \varepsilon_{123}(A^2B^3 - A^3B^2)\ei{1}
+    + \varepsilon_{231}(A^3B^1 - A^1B^3)\ei{2}\\
+    &\quad+ \varepsilon_{312}(A^1B^2 - A^2B^1)\ei{3}\\
+    &= (A^2B^3 - A^3B^2)\ei{1} + (A^3B^1 - A^1B^3)\ei{2} 
+    + (A^1B^2 - A^2B^1)\ei{3}
+\end{align*}
+Where we only wrote the non-zero terms and we used the rules of the Levi-Civita
+symbol.
+\\
+Equations (1.100) and (1.101) are essentially the same calculations.
+\item[3.] Equation (1.106) states that
+\begin{align*}
+    \varepsilon_{ijk}\varepsilon^{mnl}
+    = \delta_i^m (\delta_j^n\delta_k^l - \delta_j^l\delta_k^n)
+    - \delta_i^n (\delta_j^m\delta_k^l - \delta_j^l\delta_k^m)
+    + \delta_i^l (\delta_j^m\delta_k^n - \delta_j^n\delta_k^m)
+\end{align*}
+Then if $l = k$ we get that
+\begin{align*}
+    \varepsilon_{ijk}\varepsilon^{mnk}
+    &= \delta_i^m (\delta_j^n\delta_k^k - \delta_j^k\delta_k^n)
+    - \delta_i^n (\delta_j^m\delta_k^k - \delta_j^k\delta_k^m)
+    + \delta_i^k (\delta_j^m\delta_k^n - \delta_j^n\delta_k^m)\\
+    &= \delta_i^m (3\delta_j^n - \delta_j^n)
+    - \delta_i^n (3\delta_j^m - \delta_j^m)
+    + \delta_i^k (\delta_j^m\delta_k^n - \delta_j^n\delta_k^m)\\
+    &= 2\delta_i^m \delta_j^n
+    - 2\delta_i^n \delta_j^m
+    + \delta_i^k \delta_j^m\delta_k^n - \delta_i^k \delta_j^n\delta_k^m\\
+    &= 2\delta_i^m \delta_j^n - 2\delta_i^n \delta_j^m
+    + \delta_j^m\delta_i^n - \delta_j^n\delta_i^m\\
+    &= \delta_i^m \delta_j^n - \delta_i^n \delta_j^m
+\end{align*}
+If $n = j$ and $l = k$ we get that
+\begin{align*}
+    \varepsilon_{ijk}\varepsilon^{mjk}
+    &= \delta_i^m \delta_j^j - \delta_i^j \delta_j^m
+    = 3\delta_i^m - \delta_i^m
+    = 2\delta_i^m
+\end{align*}
+And if $m =i$, $n = j$ and $l = k$
+\begin{align*}
+    \varepsilon_{ijk}\varepsilon^{ijk}
+    &= 2\delta_i^i = 2\cdot 3 = 6
+\end{align*}
+
+\cleardoublepage
+\item[4.] Our guess for the formula equivalent to (1.106) for the case of the
+two-dimensional Levi-Civita symbol is
+\begin{align*}
+    \varepsilon_{ij}\varepsilon^{mn}
+    = \delta_i^m \delta_j^n - \delta_i^n \delta_j^m
+\end{align*}
+We check this guess by computing the components. 
+\begin{align*}
+    \varepsilon_{12}\varepsilon^{12} &= 1
+    = 1 - 0 = \delta_1^1 \delta_2^2 - \delta_1^2 \delta_2^1\\
+    \varepsilon_{21}\varepsilon^{12} &= -1
+    = 0 - 1 = \delta_2^1 \delta_1^2 - \delta_2^2 \delta_1^1\\
+    \varepsilon_{12}\varepsilon^{21} &= -1
+    = 0 - 1 = \delta_1^2 \delta_2^1 - \delta_1^1 \delta_2^2\\
+    \varepsilon_{21}\varepsilon^{21} &= 1
+    = 1 - 0 = \delta_2^2 \delta_1^1 - \delta_2^1 \delta_1^2
+\end{align*}
+For the components where $i = j$ we have that
+\begin{align*}
+    \varepsilon_{ii}\varepsilon^{mn} &= 0
+    = \delta_i^m \delta_i^n - \delta_i^n \delta_i^m
+\end{align*}
+And for the components where $m = n$ we get that
+\begin{align*}
+    \varepsilon_{ij}\varepsilon^{mm} &= 0
+    = \delta_i^m \delta_j^m - \delta_i^m \delta_j^m
+\end{align*}
+Therefore our guess is correct.
+\\
+Let us compute the identities similar to (1.107) as follows
+\begin{align*}
+    \varepsilon_{ij}\varepsilon^{mj}
+    &= \delta_i^m \delta_j^j - \delta_i^j \delta_j^m
+    = 3\delta_i^m - \delta_i^m
+    = 2\delta_i^m
+    \\
+    \varepsilon_{ij}\varepsilon^{ij}
+    &= 2\delta_i^i = 6
+\end{align*}
+
+
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.15}}\\
+Let $A^{ij}$ be any matrix then we can write it as
+\begin{align*}
+    A^{ij} = \frac{1}{2}(A^{ij} + A^{ji}) + \frac{1}{2}(A^{ij} - A^{ji})
+\end{align*}
+Let us consider the two terms as independent matrices.
+\\
+If we define $B^{ij} =\frac{1}{2}(A^{ij} + A^{ji})$ we see that 
+\begin{align*}
+    B^{ji} = \frac{1}{2}(A^{ji} + A^{ij}) = \frac{1}{2}(A^{ij} + A^{ji}) = B^{ij}
+\end{align*}
+So we see that $B^{ij}$ is a totally symmetric matrix.
+\\
+On the other hand, let us define $C^{ij} =\frac{1}{2}(A^{ij} - A^{ji})$, then
+we see that 
+\begin{align*}
+    C^{ji} = \frac{1}{2}(A^{ji} - A^{ij}) = -\frac{1}{2}(A^{ij} - A^{ji}) = -C^{ij}
+\end{align*}
+So $C^{ij}$ is a totally antisymmetric matrix.
+\\
+Therfore we may write $A^{ij}$ as 
+\begin{align*}
+    A^{ij} = A^{(ij)} + A^{[ij]}
+\end{align*}
+Where $B^{ij} = A^{(ij)}$ and $C^{ij} = A^{[ij]}$ and hence
+\begin{align*}
+    A^{(ij)} = \frac{1}{2}(A^{ij} + A^{ji})\qquad
+    A^{[ij]} = \frac{1}{2}(A^{ij} - A^{ji})
+\end{align*}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.16}}\\
+To decompose the matrix
+\begin{align*}
+    A = \begin{bmatrix}
+        1 & 1 & 2\\
+        -3 & 2 & -3\\
+        4 & 3 & 3
+    \end{bmatrix}
+\end{align*}
+We need to compute each element of the totally symmetric matrix $A_s$ and
+the totally antisymmetric matrix $A_a$, for this we use the equations (1.113)
+as follows
+\begin{align*}
+    A^{(11)}_s &= \frac{1}{2}(A^{11}_s + A^{11}_s) = \frac{1}{2}(1 + 1) = 1\\
+    A^{(12)}_s &= \frac{1}{2}(A^{12}_s + A^{21}_s) = \frac{1}{2}(1 - 3) = -1\\
+    A^{(13)}_s &= \frac{1}{2}(A^{13}_s + A^{31}_s) = \frac{1}{2}(2 + 4) = 3
+\end{align*}
+Given that $A_s$ is totally symmetric we know that $A^{(21)}_s = A^{(12)}_s$
+and $A^{(31)}_s = A^{(13)}_s$ hence the only element left to compute is
+$A^{(23)}_s = A^{(32)}_s$
+\begin{align*}
+    A^{(23)}_s &= \frac{1}{2}(A^{23}_s + A^{32}_s) = \frac{1}{2}(-3 + 3) = 0
+\end{align*}
+Then the totally symmetric matrix is 
+\begin{align*}
+    A_{s} = \begin{bmatrix}
+        1 & -1 & 3\\
+        -1 & 2 & 0\\
+        3 & 0 & 3
+    \end{bmatrix}
+\end{align*}
+For the totally antisymmetric matrix $A_a$ we compute what follows
+\begin{align*}
+    A^{[11]}_a &= \frac{1}{2}(A^{11}_a - A^{11}_a) = \frac{1}{2}(1 - 1) = 0\\
+    A^{[12]}_a &= \frac{1}{2}(A^{12}_a - A^{21}_a) = \frac{1}{2}(1 + 3) = 2\\
+    A^{[13]}_a &= \frac{1}{2}(A^{13}_a - A^{31}_a) = \frac{1}{2}(2 - 4) = -1
+\end{align*}
+And computing the element $A^{[23]}_a$ we have all we need to get $A_a$
+\begin{align*}
+    A^{[23]}_a &= \frac{1}{2}(A^{23}_a - A^{32}_a) = \frac{1}{2}(-3 - 3) = -3
+\end{align*}
+Then the matrix $A_a$ is
+\begin{align*}
+    A_{a} = \begin{bmatrix}
+        0 & 2 & -1\\
+        -2 & 0 & -3\\
+        1 & 3 & 0
+    \end{bmatrix}
+\end{align*}
+Finally, we can compute the sum $A_s + A_a$ to check that the matrices are
+correct, we should get $A$.
+\begin{align*}
+    A_{s} + A_{a} = \begin{bmatrix}
+        1 & -1 & 3\\
+        -1 & 2 & 0\\
+        3 & 0 & 3
+    \end{bmatrix} + \begin{bmatrix}
+        0 & 2 & -1\\
+        -2 & 0 & -3\\
+        1 & 3 & 0
+    \end{bmatrix}
+    = \begin{bmatrix}
+        1 & 1 & 2\\
+        -3 & 2 & -3\\
+        4 & 3 & 3
+    \end{bmatrix}
+    = A
+\end{align*}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{Exercise 1.17}}\\
+\begin{itemize}
+\item [1.] Let $\varepsilon_{ijk} A^k = B_{ij}$ then multiplying both sides by
+$\varepsilon^{ijl}$ we get that
+\begin{align*}
+    \varepsilon_{ijk}\varepsilon^{ijl} A^k &= \varepsilon^{ijl}B_{ij}\\
+    2\delta_{k}^l A^k &= \varepsilon^{ijl}B_{ij}\\
+    2 A^l &= \varepsilon^{ijl}B_{ij}\\
+    A^l &= \frac{1}{2}\varepsilon^{ijl}B_{ij}
+\end{align*}
+\item [2.] Let now $A^{jk}$ be totally antisymmetric and let also 
+$\varepsilon_{ijk} A^{jk} = B_{i}$ then
+\begin{align*}
+    \varepsilon^{inm}\varepsilon_{ijk} A^{jk} &= \varepsilon^{inm}B_{i}\\
+    (\delta_j^n\delta_k^m - \delta_k^n\delta_j^m) A^{jk} &= \varepsilon^{inm}B_{i}\\
+    \delta_j^n\delta_k^mA^{jk} - \delta_k^n\delta_j^m A^{jk} &= \varepsilon^{inm}B_{i}\\
+    A^{nm} - A^{mn} &= \varepsilon^{inm}B_{i}
+\end{align*}
+But $A$ is totally antisymmetric so $A^{mn} = -A^{nm}$ and hence
+\begin{align*}
+    A^{nm} + A^{nm} &= \varepsilon^{inm}B_{i}\\
+    A^{nm} &= \frac{1}{2}\varepsilon^{inm}B_{i}
+\end{align*}
+\item [3.] Let now $A^{jk}$ be totally symmetric and let also 
+$\varepsilon_{ijk} A^{jk} = B_{i}$ then
+\begin{align*}
+    \varepsilon^{inm}\varepsilon_{ijk} A^{jk} &= \varepsilon^{inm}B_{i}\\
+    \varepsilon^{nmi}\varepsilon_{jki} A^{jk} &= \varepsilon^{inm}B_{i}\\
+    (\delta_j^n\delta_k^m - \delta_j^m\delta_k^n) A^{jk} &= \varepsilon^{inm}B_{i}\\
+    \delta_j^n\delta_k^mA^{jk} - \delta_j^m\delta_k^n A^{jk} &= \varepsilon^{inm}B_{i}\\
+    A^{nm} - A^{mn} &= \varepsilon^{inm}B_{i}\\
+    A^{nm} - A^{nm} &= \varepsilon^{inm}B_{i}\\
+    0 &= B_i
+\end{align*}
+Where we used that $A$ is totally symmetric so $A^{mn} = A^{nm}$, then since 
+$B_i = 0$ we have that $\varepsilon_{ijk}A^{jk} = 0$.
+\item [4.] If $A^{jk}$ is neither totally symmetric nor totally antisymmetric
+then we get that
+\begin{align*}
+    A^{nm} - A^{mn} &= \varepsilon^{inm}B_{i}
+\end{align*}
+But we can write $A^{nm}$ as the sum of a totally symmetric and a totally
+antisymmetric matrix so
+\begin{align*}
+    A^{(nm)} + A^{[nm]} - A^{(mn)} - A^{[mn]} &= \varepsilon^{inm}B_{i}\\
+    A^{(nm)} + A^{[nm]} - A^{(nm)} + A^{[nm]} &= \varepsilon^{inm}B_{i}\\
+    2A^{[nm]} &= \varepsilon^{inm}B_{i}\\
+    A^{[nm]} &= \frac{1}{2}\varepsilon^{inm}B_{i}
+\end{align*}
+So as we saw in part 2 the antisymmetric matrix will be of the form
+$\frac{1}{2}\varepsilon^{inm}B_{i}$ but we cannot say anything about the
+symmetric part.
+
+\item [5.] Let $\delta^{ik}\varepsilon_{ijn}A^n = B_j^k$ then
+\begin{align*}
+    \delta^{ik}\varepsilon_{ijn}A^n &= B_j^k\\
+    {\varepsilon^k}_{jn} A^n &= B_j^k\\
+    {\varepsilon_k}^{jl} {\varepsilon^k}_{jn} A^n &= {\varepsilon_k}^{jl} B_j^k\\
+    2\delta^l_nA^n &= {\varepsilon_k}^{jl}B_j^k\\
+    A^l &= \frac{1}{2}{\varepsilon_k}^{jl}B_j^k
+\end{align*}
+\end{itemize}
+\end{proof}
+\end{document}
